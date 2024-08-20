@@ -96,7 +96,7 @@ gameCounter++;
 console.log(gameCounter);
 
 // link to study
-// https://tc39.es/ecma262/#sec-abstract-operations
+// https://tc39.es/ecma262/multipage/abstract-operations.html#sec-type-conversion
 
 
 
