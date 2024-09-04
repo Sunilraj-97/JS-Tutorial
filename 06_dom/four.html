@@ -31,11 +31,18 @@
     addOptiLanguage('SQL')
 
     // Edit
-
     const secondLi = document.querySelector('li:nth-child(2)')
     const newLi = document.createElement('li')
     newLi.textContent = 'MongoDB'
     secondLi.replaceWith(newLi)
+
+    //Edit
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>Typescript</li>'
+
+    //Remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
 
 </script>
 
