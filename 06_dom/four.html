@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning with Hitesh</title>
+</head>
+
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLang(language) {
+        const li = document.createElement('li')
+        li.innerHTML = `${language}`
+        document.querySelector('.language').appendChild(li)
+    }
+    // addLang('React')
+    // addLang('HTML')
+    // addLang('CSS')
+
+    function addOptiLanguage(language) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(language))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addOptiLanguage('React')
+    addOptiLanguage('SQL')
+
+    // Edit
+
+    const secondLi = document.querySelector('li:nth-child(2)')
+    const newLi = document.createElement('li')
+    newLi.textContent = 'MongoDB'
+    secondLi.replaceWith(newLi)
+
+</script>
+
+</html>
