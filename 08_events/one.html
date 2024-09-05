@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Events</title>
+</head>
+
+<body>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <!-- <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                     alt="" onclick="alert('owl')"></li> --> <!--We should not use onClick here and also not a right
+            method -->
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><a href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+
+    //Events
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('owl').onclick = function () {
+    //     alert('owl clicked')
+    // }  // This also not a right method to write onClick event  ❌
+
+    // document.getElementById('owl').addEventListener('click', function () {
+    //     alert('owl Clicked again')
+    // }, false) // Here false is default value and it is not required to mention also and also refers to Bubbling
+
+    // document.getElementById('images').addEventListener('click', function () {
+    //     console.log('UL clicked')
+    // }, false)
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     e.stopPropagation()
+    //     console.log('owl Clicked again')
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function () {
+    //     alert('owl Clicked again')
+    // }, true)    // Here this true refers to Capturing
+
+    // Event propagation
+
+    // JavaScript uses Event Propagation to handle how events travel through the Document Object Model (DOM)
+    //  when an event occurs and reaches the target element, triggering further actions based on the event.
+
+    // 1. Capturing - This is the first phase in the event propagation process.
+    //  When an event is triggered, it starts from the root of the DOM tree and then moves down towards the target element.
+    //   By default, event handlers are not executed in this phase.
+
+    // 2. Targeting - This phase starts once the event reaches the element where the event was triggered.
+    // Any event handlers associated with the target element for the particular event get executed in this phase.
+
+    // 3. Bubbling - After targeting, the event traces back its path and moves back up to the root of the DOM.
+    // It is in this phase that the event handlers execute.
+    // JavaScript executes the associated event handlers in order as the event moves up the DOM tree.
+
+    document.getElementById('google').addEventListener('click', function (e) {
+        e.preventDefault()
+        e.stopPropagation()  // means it will not back trace
+        // console.log('Google clicked');
+    }, false)
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        if (e.target.tagName === "IMG") {
+            console.log(e.target.id);
+            const removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+
+    // removeIt.parentNode.removeChild(removeIt)
+</script>
+
+</html>
