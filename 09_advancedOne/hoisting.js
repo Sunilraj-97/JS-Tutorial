@@ -6,7 +6,7 @@
 // Hosting in javaScript is a behavior where variable and function declarations are moved to the top of 
 // their scope during the compilation phase, before the code is executed.
 
-// Hoisting with var
+// Hoisting with var--------------------------
 
 // console.log(a); // undefined
 // var a = 5;
@@ -14,7 +14,7 @@
 
 // Here, var a; is hoisted to the top, so the first console.log doesn't throw an error but prints undefined.
 
-// Hoisting with let and const
+// Hoisting with let and const-----------------
 
 // console.log(b); // ReferenceError: Cannot access 'b' before initialization
 // let b = 10;
@@ -24,10 +24,11 @@
 
 // For let and const, variables are in a "temporal dead zone" from the start of the block until their declaration is encountered.
 
-// Temporal Dead Zone is a area of a block where a varible is inaccessible until the moment the computer completely initialize it with a value
+// Temporal Dead Zone is the time since when this let variable was hoisted and till it is initialized some value the time between that phase is called TDZ
+// (From hoisting till it assigns or get some value the time between that phase is called TDZ)
 
 
-// Hoisting with Functions
+// Hoisting with Functions------------------
 
 // greet(); // "Hello!"
 // function greet() {
@@ -36,7 +37,7 @@
 
 // Entire function declarations are hoisted, so the function greet is available before its definition.
 
-// Function Expressions
+// Function Expressions----------------------
 
 // sayHello(); // TypeError: sayHello is not a function
 // var sayHello = function() {
